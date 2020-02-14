@@ -1,0 +1,17 @@
+= User Provisioned Installation of Red Hat OpenShift 4.x on VMware Virtual Infrastructure
+
+== Introduction
+
+Installing OpenShift (OCP) 4.x requires a significant amount of pre-planning and infrastructure preparation.
+
+In this guide we will install a small OpenShift 4.2 instance.  We will use an installation server with an embedded web server.  Our cluster will consist of a bootstrap node, 3 master nodes, 3 worker nodes, 2 load balancers.  The installation server and bootstrap server can be deleted when the installation is complete, however you may want to keep the installation server around for future installs.
+
+This document will contain information for installing in a VMware vSphere environment as well as in a "bare metal" environment.  The reason "bare metal" is in quote is that this installation method will work with any hypervisor/cloud provider.
+
+OCP has specific installers for a number of cloud providers (AWS, Google, IBM Cloud, Azure) known as Installer Provisioned Infrastructure (or IPI) and a separate mechanism for using User Provisioned Infrastructure (UPI).
+
+For UPI, Red Had provides an installer for VMware environments which use vCenter Server and also for bare metal.  If you have any other hypervisor in your on-prem environment than VMware (e.g. KVM or Nutanix) you can use the bare metal installer even though the platform is not technically bare metal.  You will do the installation as though it were bare metal.  You can also use this installer if you want to do an actual bare metal install. :-)
+
+This document will *not* describe doing an IPI installation, but you can still use the bare metal installation method in those environments if you so desire.
+
+Many of the steps to install OCP 4x in a UPI environment are common regardless of your hypervisor or bare metal infrastructure. To make the document more readable, there are collapsible sections for details of the specific environment you are trying to use, VMware or Bare Metal.  Open the expand the appropriate sections for the type of environment you are deploying.
