@@ -127,21 +127,21 @@ We will discuss each of these in turn in the rest of this document.
 
 1. Create a directory for your new cluster.  In this document I will use a cluster named after my userid `vhavard`.
 
-  ```
-  mkdir /opt/vhavard
-  ```
+    ```
+    mkdir /opt/vhavard
+    ```
 
 1. Install the httpd web server
 
-  ```
-  yum install -y httpd
-  ```
+    ```
+    yum install -y httpd
+    ```
 
-  This will create a document root of /var/www/html.  Create a softlink from the document root to your project directory.
+    This will create a document root of /var/www/html.  Create a softlink from the document root to your project directory.
 
-  ```
-  ln -s /opt/vhavard /var/www/html/vhavard
-  ```
+    ```
+    ln -s /opt/vhavard /var/www/html/vhavard
+    ```
 
 1.  Download the OpenShift client and installer and explode it into your /opt directory.  Use your browser to follow the following link and download the client and installer tarballs for the latest release version
 
