@@ -145,46 +145,46 @@ We will discuss each of these in turn in the rest of this document.
 
 1.  Download the OpenShift client and installer and explode it into your /opt directory.  Use your browser to follow the following link and download the client and installer tarballs for the latest release version
 
-  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/
+    https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/
 
-  Or, if you are in the IBM Cloud Adoption Lab you can get it from:
+    Or, if you are in the IBM Cloud Adoption Lab you can get it from:
 
-  http://storage4.csplab.local/storage/ocp/
+    http://storage4.csplab.local/storage/ocp/
 
 
-  Explode the files into /opt (replace the x's in the command below with the version number you are exploding):
-  
-  ```
-  cd /opt
-  gunzip -c openshift-client-linux-4.x.x.tar.gz |tar -xvf -
-  gunzip -c openshift-install-linux-4.x.x.tar.gz |tar -xvf -
-  ```
+    Explode the files into /opt (replace the x's in the command below with the version number you are exploding):
 
-  Now copy the `oc` and `kubectl` binaries into your path
-  ```
-  sudo cp oc /usr/local/bin/
-  sudo cp kubectl /usr/local/bin/
-  ```
+    ```
+    cd /opt
+    gunzip -c openshift-client-linux-4.x.x.tar.gz |tar -xvf -
+    gunzip -c openshift-install-linux-4.x.x.tar.gz |tar -xvf -
+    ```
+
+    Now copy the `oc` and `kubectl` binaries into your path
+    ```
+    sudo cp oc /usr/local/bin/
+    sudo cp kubectl /usr/local/bin/
+    ```
 
 1. Create an ssh key for your primary user
 
-  ```
-  ssh-keygen -t rsa -b 4096 -N ''
-  ```
+    ```
+    ssh-keygen -t rsa -b 4096 -N ''
+    ```
 
-  Accept the default location for the file.
+    Accept the default location for the file.
 
 1. Start the ssh agent
 
-  ```
-  eval "$(ssh-agent -s )"
-  ```
+    ```
+    eval "$(ssh-agent -s )"
+    ```
 
 1. Add your private key to the ssh-agent
 
-  ```
-  ssh-add ~/.ssh/id_rsa
-  ```
+    ```
+    ssh-add ~/.ssh/id_rsa
+    ```
 
 1. You will need a pull secret so your cluster can download the needed containers.  Get your pull secret from https://cloud.redhat.com/openshift/install/vsphere/user-provisioned and put it into a file in your /opt directory (e.g. pull-secret.txt).  You will need this in the next step.
 
