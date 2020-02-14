@@ -115,15 +115,15 @@ We will discuss each of these in turn in the rest of this document.
 
 1. Disable the firewall and selinux (or open a hole for port 80)
 
-  ```
-  # Stop the firewall and set selinux to passive
-  systemctl stop firewalld
-  setenforce 0
+    ```
+    # Stop the firewall and set selinux to passive
+    systemctl stop firewalld
+    setenforce 0
 
-  # make changes persist over a reboot
-  systemctl disable firewalld
-  sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
-  ```
+    # make changes persist over a reboot
+    systemctl disable firewalld
+    sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+    ```
 
 1. Create a directory for your new cluster.  In this document I will use a cluster named after my userid `vhavard`.
 
