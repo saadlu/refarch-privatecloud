@@ -45,7 +45,7 @@ In this guide we will use the following topology:
 +++ <details><summary> +++
 Basic Install Steps for VMware
 +++ </summary><div> +++
-----
+
 . Create an installation node (running RHEL 7 or 8) an with embedded web server (or reuse an existing server that you have used for a previous install - you can install multiple clusters with a single install server).
 . Download and deploy the rhcos template onto your vcenter server.
 . Download and explode the openshift installer onto your installation server.
@@ -60,13 +60,13 @@ Basic Install Steps for VMware
 . Configure persistent storage for your image registry
 . Complete installation
 . Login to your new cluster and configure authentication
-----
+
 +++ </div></details> +++
 
 +++ <details><summary> +++
 Basic Install Steps for Bare Metal
 +++ </summary><div> +++
-----
+
 . Create an installation node (running RHEL 7 or 8) an with embedded web server (or reuse an existing server that you have used for a previous install - you can install multiple clusters with a single install server).
 . Download and deploy the .img and metal config files from Red Hat.
 . Download and explode the openshift installer onto your installation server.
@@ -81,5 +81,5 @@ Basic Install Steps for Bare Metal
 . Configure persistent storage for your image registry
 . Complete installation
 . Login to your new cluster and configure authentication
-----
+
 +++ </div></details> +++
