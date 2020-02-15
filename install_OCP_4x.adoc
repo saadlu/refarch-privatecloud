@@ -1,4 +1,5 @@
 = User Provisioned Installation of Red Hat OpenShift 4.x on VMware Virtual Infrastructure
+:toc:
 
 == Introduction
 
@@ -15,3 +16,43 @@ For UPI, Red Had provides an installer for VMware environments which use vCenter
 This document will *not* describe doing an IPI installation, but you can still use the bare metal installation method in those environments if you so desire.
 
 Many of the steps to install OCP 4x in a UPI environment are common regardless of your hypervisor or bare metal infrastructure. To make the document more readable, there are collapsible sections for details of the specific environment you are trying to use, VMware or Bare Metal.  Open the expand the appropriate sections for the type of environment you are deploying.
+
+== Terminology
+
+Host:: A physical machine with a hypervisor installed which can be used to host one or more virtual machines.
+
+Server:: A physical or virtual machine that is used to provide services to other machines.
+
+Workstation:: A physical or virtual machine that is typically used by a single person as a desktop on which work can be done.  This is typically a laptop, desktop, or virtual machine provided by some technology such as Citrix.
+
+VM:: A Virtual Machine which can be provisioned as a server or workstation and runs as a "guest" on a "host" machine.
+
+Guest:: Another name for a Virtual Machine.
+
+Node:: A specialized physical or virtual machine dedicated to a specific function.  For example, a "node" could be a Storage Node, Compute Node, Master Node, Worker node, Infrastructure Node, etc.
+
+Installation in a UPI environment includes the following basic steps:
+
+In this guide we will use the following topology:
+
+* Installation server (with webserver installed)
+* 1 load balancer for the control control plane (master nodes)
+* 1 load balancer for the compute nodes (worker nodes)
+* 1 Bootstrap node
+* 3 control plane nodes (master nodes)
+* 3 compute nodes (worker nodes)
+
++++ <details><summary> +++
+Check `reference.conf`:
++++ </summary><div> +++
+----
+play {
+  http {
+    secret.key = asdf
+    secret.key = ${?SECRET_KEY}
+    ...
+  }
+  ...
+}
+----
++++ </div></details> +++
