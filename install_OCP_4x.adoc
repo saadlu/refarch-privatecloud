@@ -43,16 +43,43 @@ In this guide we will use the following topology:
 * 3 compute nodes (worker nodes)
 
 +++ <details><summary> +++
-Check `reference.conf`:
+Basic Install Steps for VMware
 +++ </summary><div> +++
 ----
-play {
-  http {
-    secret.key = asdf
-    secret.key = ${?SECRET_KEY}
-    ...
-  }
-  ...
-}
+. Create an installation node (running RHEL 7 or 8) an with embedded web server (or reuse an existing server that you have used for a previous install - you can install multiple clusters with a single install server).
+. Download and deploy the rhcos template onto your vcenter server.
+. Download and explode the openshift installer onto your installation server.
+. Create the needed `install-config.yaml` file on your installation server.
+. Create the needed ignition files for your deployment
+. Deploy, but don't boot the bootstrap, control plane, and compute nodes.
+. Configure the DHCP server.
+. Configure DNS to support your cluster
+. Create or configure a load balancer for the control plane
+. Create or configure a load balancer for the compute nodes.
+. Complete the bootstrap process
+. Configure persistent storage for your image registry
+. Complete installation
+. Login to your new cluster and configure authentication
+----
++++ </div></details> +++
+
++++ <details><summary> +++
+Basic Install Steps for Bare Metal
++++ </summary><div> +++
+----
+. Create an installation node (running RHEL 7 or 8) an with embedded web server (or reuse an existing server that you have used for a previous install - you can install multiple clusters with a single install server).
+. Download and deploy the .img and metal config files from Red Hat.
+. Download and explode the openshift installer onto your installation server.
+. Create the needed install-config.yaml file on your installation server.
+. Create the needed ignition files for your deployment
+. Configure the DHCP server
+. Configure the PXE server.
+. Configure DNS to support your cluster
+. Create or configure a load balancer for the control plane
+. Create or configure a load balancer for the compute nodes.
+. Complete the bootstrap process
+. Configure persistent storage for your image registry
+. Complete installation
+. Login to your new cluster and configure authentication
 ----
 +++ </div></details> +++
