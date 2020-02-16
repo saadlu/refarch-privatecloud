@@ -42,9 +42,10 @@ In this guide we will use the following topology:
 * 3 control plane nodes (master nodes)
 * 3 compute nodes (worker nodes)
 
-+++ <details><summary> +++
-Basic Install Steps for VMware
-+++ </summary><div> +++
+
+.Basic Install Steps for VMware
+[%collapsible]
+====
 
 . Create an installation node (running RHEL 7 or 8) an with embedded web server (or reuse an existing server that you have used for a previous install - you can install multiple clusters with a single install server).
 . Download and deploy the rhcos template onto your vcenter server.
@@ -61,11 +62,12 @@ Basic Install Steps for VMware
 . Complete installation
 . Login to your new cluster and configure authentication
 
-+++ </div></details> +++
+====
 
-+++ <details><summary> +++
-Basic Install Steps for Bare Metal
-+++ </summary><div> +++
+
+.Basic Install Steps for Bare Metal
+[%collapsible]
+====
 
 . Create an installation node (running RHEL 7 or 8) an with embedded web server (or reuse an existing server that you have used for a previous install - you can install multiple clusters with a single install server).
 . Download and deploy the .img and metal config files from Red Hat.
@@ -82,4 +84,4 @@ Basic Install Steps for Bare Metal
 . Complete installation
 . Login to your new cluster and configure authentication
 
-+++ </div></details> +++
+====
