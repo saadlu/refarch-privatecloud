@@ -566,7 +566,7 @@ Assuming the environment is KVM, use `virt-manager` or `virsh` to create a VM fo
 
 +
 See the table below for recommended sizing of the various nodes:
-
++
 [cols=5*, options=header]
 |===
 | Node Type
